@@ -13,7 +13,7 @@ def index():
 
 @app.route('/training/<prof>')
 def training(prof):
-    return render_template('page.html', title='Домашняя страница',  prof=prof)
+    return render_template('page.html', title='Домашняя страница', prof=prof)
 
 
 @app.route('/list_prof/<type_>')
@@ -39,6 +39,11 @@ def professions(type_):
         "Менеджер по международным отношениям для взаимодействия с другими космическим"]
 
     return render_template('profs.html', title='Список профессий', typep=type_, professions=profs)
+
+
+@app.route('/login')
+def login():
+    return render_template('danger.html', title='Аварийная ситуация')
 
 
 app.run(port=8080, host='127.0.0.1')
