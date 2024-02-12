@@ -46,4 +46,19 @@ def login():
     return render_template('danger.html', title='Аварийная ситуация')
 
 
+@app.route('/distribution')
+def destrib():
+    peop = [
+        "Александр Иванов",
+        "Екатерина Смирнова",
+        "Дмитрий Петров",
+        "Ольга Чернова",
+        "Артем Федоров",
+        "Наталья Морозова",
+        "Сергей Васнецов",
+        "Марина Козлова"
+    ]
+    return render_template('places.html', title='Размещение', people=peop)
+
+
 app.run(port=8080, host='127.0.0.1')
